@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This site is about the Smart Electronic Locking Device (SELD). This is one of the smart lock software products.">
+    <title>{{ title }}</title>
+
+    {% load static %}
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'seld/content/main.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'seld/content/settings.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'seld/content/queries.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'seld/content/site.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'seld/content/style.css' %}" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+
+    <link rel="shortcut icon" type="image/png" href="{% static 'seld/own_pictures/locked.png' %}" >
+</head>
+<body>
+    <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader">
+        <div class="preloader-inner">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+
+    <div class="wrapper">
+        {% include 'seld/navbar.html' %}
+        
+        <div class="main">
+            {% block content %}
+
+            {% endblock %}
+
+            {% block safe %}
+
+            {% endblock %}
+        </div>
+        
+    
+        <footer class="footer">
+            <div class="grid_columns">
+                <div class="column">
+                    <p>Контакты</p>
+                    <p>8 (960) 988-15-17</p>
+                </div>
+                <div class="column">
+                    <p>Почта</p>
+                    <p>seld-partnership@seld-lock.ru</p>
+                </div>
+                <div class="column">
+                    <p>Социальные сети</p>
+                    <div class="socials">
+                        <a href="https://vk.com/seldlocker" target="_blank">
+                            <svg width="30" height="30" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="white">
+                                <path d="M27.55,35.19V28.55c4.46.68,5.87,4.19,8.71,6.64H43.5a29.36,29.36,0,0,0-7.9-10.47c2.6-3.58,5.36-6.95,6.71-12.06H35.73c-2.58,3.91-3.94,8.49-8.18,11.51V12.66H18l2.28,2.82,0,10.05c-3.7-.43-6.2-7.2-8.91-12.87H4.5C7,20.32,12.26,37.13,27.55,35.19Z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="copy_footer">
+                <div class="copyright">
+                    <p>&copy; 2024 SELD</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    {% block scripts %}
+
+    {% endblock %}
+    <script>
+        $(window).on('load', function() {
+            $('#js-preloader').addClass('loaded');
+        });
+    </script>
+</body>
+</html>

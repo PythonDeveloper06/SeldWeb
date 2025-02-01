@@ -1,0 +1,10 @@
+Django~=5.1.5
+django-userforeignkey
+pillow~=11.1.0
+djangorestframework~=3.15.2
+gunicorn
+django-debug-toolbar~=5.0.1
+djoser
+drf-extensions
+whitenoise
+pytz~=2025.1
