@@ -34,23 +34,15 @@
 
 /* navbar */
 
-@media(max-width: 885px) {
-    .navlist > *:not(:last-child) {
-        display: none;
-    }
-
-    .showHam {
-        display: flex;
+@media(max-width: 610px) {
+    nav, nav.sticky {
+        padding: 2rem 4rem;
     }
 }
 
 @media(max-width: 500px) {
-    nav {
-        padding: 40px 8%;
-    }
-
-    nav.sticky {
-        padding: 30px 8%;
+    nav, nav.sticky {
+        padding: 2rem 3rem;
     }
 }
 

@@ -33,14 +33,9 @@ general settings
     --blue-90: #0077ff;
 }
 
-html {
-    height: 100%;
-}
-
 body {
     color: var(--text-color);
     background: var(--bg-color-image);
-    height: 100%;
 }
 
 /*
@@ -52,12 +47,11 @@ wrapper, main, footer
 .wrapper {
     display: flex;
     flex-direction: column;
-    min-height: 100%;
     background: var(--bg-color-image);
 }
 
 .main {
-    margin-top: 50px;
+    margin-top: min(2.5em, 7%);
     flex-grow: 1;
 }
 
