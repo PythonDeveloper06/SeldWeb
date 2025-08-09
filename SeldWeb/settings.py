@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-0vvn8b7ejc2%u89*_2r69jwp9ra47h-gjd%#i$gysuxf%qbb7o
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['seld-lock.ru', '127.0.0.1']
 
 CSRF_TRUSTED_ORIGINS = ['https://seld-lock.ru']
 
@@ -148,9 +148,10 @@ REST_FRAMEWORK = {
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'static/'
 
 MEDIA_ROOT = BASE_DIR / 'media/'
-MEDIA_URL = '/media/'
+MEDIA_URL = 'media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
