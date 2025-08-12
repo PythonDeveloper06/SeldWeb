@@ -82,7 +82,7 @@ wrapper, main, footer
     margin-bottom: 0;
 }
 
-.column p  {
+.column p {
     display: flex;
     justify-content: center;
 }
@@ -158,29 +158,35 @@ profile
     padding-bottom: 1rem;
     text-align: center;
 }
+
 .account-settings .user-profile .user-avatar {
     margin: 0 0 1rem 0;
 }
+
 .account-settings .user-profile .user-avatar img {
     max-width: 120px;
-    max-height: 120px; 
- /* -webkit-border-radius: 100px;
+    max-height: 120px;
+    /* -webkit-border-radius: 100px;
     -moz-border-radius: 100px;
     border-radius: 100px; */
 }
+
 .account-settings .user-profile h5.user-name {
     margin: 0 0 0.5rem 0;
 }
+
 .account-settings .user-profile h6.user-email {
     margin: 0;
     font-size: 0.8rem;
     font-weight: 400;
 }
+
 .account-settings .about {
     margin: 1rem 0 0 0;
     font-size: 0.8rem;
     text-align: center;
 }
+
 .card {
     background: var(--bg-profile);
     -webkit-border-radius: 5px;

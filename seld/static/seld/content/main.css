@@ -126,10 +126,6 @@ nav {
     border-radius: 1.25rem;
 }
 
-nav svg path {
-    transition: all .50s ease;
-}
-
 nav.sticky {
     background: var(--bl-colors-blue-dark-bg);
     z-index: 1000;
@@ -235,7 +231,7 @@ nav svg:hover {
         right: 0;
     }
 
-    .show ~ #overlay {
+    .show~#overlay {
         display: block;
     }
 
@@ -359,7 +355,6 @@ section p {
     padding: 0;
     margin: 0;
     font-size: 40px;
-    ;
 }
 
 .neon_typed {
