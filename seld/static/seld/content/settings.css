@@ -3,16 +3,16 @@
 general settings
 ---------------------------
 */
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
-    font-family: 'Ubuntu', sans-serif;
+@layer base {
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        list-style: none;
+        font-family: 'Ubuntu', sans-serif;
+    }
 }
-
 :root {
     --text-color: #ffffff;
     --main-color: #13bbff;
@@ -72,16 +72,6 @@ wrapper, main, footer
     margin-bottom: 0;
 }
 
-.grid_columns {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-}
-
-.grid_columns p {
-    margin-bottom: 0;
-}
-
 .column p {
     display: flex;
     justify-content: center;
@@ -91,30 +81,17 @@ wrapper, main, footer
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 2px;
+    cursor: pointer;
 }
 
 .socials svg path {
     transition: all 0.3s ease;
 }
 
-.grid_columns .column .socials a {
-    padding: 2px;
-    cursor: pointer;
-}
-
 .socials svg:hover path {
     fill: var(--blue-90);
     transition: fill 0.3s ease-in-out;
-}
-
-.copy_footer {
-    display: flex;
-    justify-content: center;
-}
-
-.copyright {
-    text-align: center;
-    padding-top: 1rem;
 }
 
 /*

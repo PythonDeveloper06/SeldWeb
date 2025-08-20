@@ -126,11 +126,7 @@ nav {
     border-radius: 1.25rem;
 }
 
-nav svg path {
-    transition: all .50s ease;
-}
-
-nav.sticky {
+.sticky {
     background: var(--bl-colors-blue-dark-bg);
     z-index: 1000;
     box-shadow: 0 1rem 1rem rgba(0, 0, 0, .2);
@@ -235,7 +231,7 @@ nav svg:hover {
         right: 0;
     }
 
-    .show ~ #overlay {
+    .show~#overlay {
         display: block;
     }
 
@@ -265,48 +261,6 @@ home page
     content: none;
 }
 
-.container-home {
-    max-width: 1200px;
-    margin: auto;
-    padding: 3rem 2rem 2rem 2rem;
-}
-
-header {
-    position: relative;
-    padding-top: 2rem;
-}
-
-.round {
-    border-radius: 50%;
-    object-fit: cover;
-    border: 7px solid var(--main-color);
-    box-shadow: 0 0 20px var(--main-color);
-}
-
-.text_logo {
-    background: transparent;
-    width: 400px;
-}
-
-header .image {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    position: relative;
-    padding-top: 1rem;
-}
-
-header .image img {
-    max-width: 500px;
-    margin: auto;
-}
-
-header .content p {
-    margin-top: 2rem;
-    font-size: 20px;
-    text-align: justify;
-}
-
 .h-btn {
     display: inline-block;
     padding: 7px 15px;
@@ -326,30 +280,11 @@ header .content p {
     transform: scale(1);
 }
 
-section .header {
-    margin-bottom: 1rem;
-    color: var(--text-color);
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 600;
-}
-
-section p {
-    text-align: justify;
-    font-size: 16px;
-    padding: 2px;
-}
-
-.all_btn {
-    display: flex;
-    justify-content: center;
-}
-
 .animated_text {
     display: flex;
     justify-content: center;
     background: var(--bg-footer);
-    padding: 3rem;
+    padding: 2rem;
     transition: all .50s ease;
     margin: 0px 10px 2rem 10px;
     border-radius: 30px;
@@ -359,7 +294,6 @@ section p {
     padding: 0;
     margin: 0;
     font-size: 40px;
-    ;
 }
 
 .neon_typed {

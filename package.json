@@ -1,0 +1,20 @@
+{
+  "name": "seldweb",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "watch:css": "npx @tailwindcss/cli -i ../SeldWeb/seld/static/seld/content/input.css -o ../SeldWeb/seld/static/seld/content/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.12",
+    "preline": "^3.2.3",
+    "tailwindcss": "^4.1.12"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.10"
+  }
+}

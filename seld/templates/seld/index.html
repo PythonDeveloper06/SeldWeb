@@ -3,12 +3,12 @@
 {% block content %}
 {% load static %}
 
-<header class="container-home">
-    <div class="content">
-        <div class="image">
-            <img src="{% static 'seld/own_pictures/seld_pixian_ai.png' %}" alt="SELD" class="text_logo">
+<div class="main_seld relative pt-9 max-w-7xl m-auto p-8">
+    <div>
+        <div class="flex justify-center items-center relative pt-4">
+            <img class="bg-transparent w-[400px] mx-auto" src="{% static 'seld/own_pictures/seld_pixian_ai.png' %}" alt="SELD">
         </div>
-        <p>
+        <p class="text-xl mt-8 text-justify">
             SELD - умный электронный замок контролируемый пользователем через приложение.
             Он сможет полностью настроить замок под свои нужды.
             Дистанционное открытие замка, создание постоянных и временных кодов доступа и NFC ключи,
@@ -17,29 +17,29 @@
             (например изменение клавиатуры для большей защиты).
         </p>
     </div>
-    <div class="image">
-        <img src="{% static 'seld/own_pictures/Lock_SELD_square.jpg' %}" alt="SELD" class="round">
+    <div class="flex justify-center items-center relative pt-4">
+        <img class="max-w-[500px] mx-auto rounded-full border-7 border-solid border-[var(--main-color)] shadow-[0_0_20px_var(--main-color)] object-cover" src="{% static 'seld/own_pictures/Lock_SELD_square.jpg' %}" alt="SELD">
     </div>
-</header>
+</div>
 
 <div class="animated_text">
-    <p>SELD -&nbsp
-        <p class="typed_text"></p>
+    <p class="text-[40px]">SELD -&nbsp
+        <p class="text-[40px] typed_text"></p>
     </p>
 </div>
 
-<section>
-    <div class="container">
-        <h2 class="header">Мобильное приложение</h2>
-        <p>
+<section class="seld_apk">
+    <div class="px-12 md:px-10 mb-4">
+        <h2 class="text-center text-[var(--text-color)] text-xl md:text-2xl font-semibold lg:text-3xl mb-2">Мобильное приложение</h2>
+        <p class="text-justify text-base p-0.5">
             Приложение будет обладать удобным, красивым и минималистичным дизайном.
             С помощью приложения пользователь сможет проводить настройку замка,
             выставлять коды доступа и генерировать NFC ключи.
             У пользователя может одновременно быть зарегистрировано несколько замков,
             и пользователь сможет проводить индивидуальную настройку каждого замка.
         </p>
-        <div class="all_btn">
-            <a class="h-btn a-default" style="cursor: pointer;" href="{% url 'download_apk_file' %}">Скачать apk-файл</a>
+        <div class="flex justify-center pt-4 pb-2">
+            <a class="h-btn" href="{% url 'download_apk_file' %}">Скачать apk-файл</a>
         </div>
     </div>
 </section>

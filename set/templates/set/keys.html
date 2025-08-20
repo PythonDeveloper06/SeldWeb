@@ -2,20 +2,68 @@
 
 {% block safe %}
 
-<div class="container" style="margin-top: 2rem;">
-
-    <div class="text-center">
-        <h2>{{ title }}</h2>
-        <h3>Here you can add your new keys for devices</h3>
-        <div class="d-grid gap-2 mx-auto col-9 col-sm-6 d-lg-block d-md-grid">
-            <button type="button" class="h-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Add new keys for
-                devices
+<div class="mt-8 px-8">
+    <div class="text-center mb-2">
+        <h2 class="text-2xl font-semibold mb-1">{{ title }}</h2>
+        <h3 class="text-xl mb-2">Here you can add your new keys for devices</h3>
+        <div class="grid grid-cols-1 gap-2 sm:inline-block w-auto place-items-center">
+            <button type="button" class="h-btn" aria-haspopup="dialog" aria-expanded="false"
+                aria-controls="hs-vertically-centered-modal" data-hs-overlay="#hs-vertically-centered-modal">
+                Add new keys for device
             </button>
-            <a href="{% url 'devices' %}" class="h-btn a-default">Return to your devices</a>
+            <a href="{% url 'devices' %}" class="h-btn">Return to your devices</a>
         </div>
     </div>
 
     <hr />
+
+    <div id="hs-vertically-centered-modal"
+        class="hs-overlay hidden size-full fixed top-0 start-0 z-80 overflow-x-hidden overflow-y-auto pointer-events-none"
+        role="dialog" tabindex="-1" aria-labelledby="hs-vertically-centered-modal-label">
+        <div class="hs-overlay-open:mt-7 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto min-h-[calc(100%-56px)] flex items-center">
+            
+            <div class="w-full flex flex-col bg-white border border-gray-200 shadow-2xs rounded-xl pointer-events-auto dark:bg-neutral-800 dark:border-neutral-700 dark:shadow-neutral-700/70">
+                
+                <div class="grid grid-cols-12 items-center py-2 px-2 border-b border-gray-200 dark:border-neutral-700">
+                    <h3 id="hs-vertically-centered-modal-label" class="col-span-11 text-center font-bold text-gray-800 dark:text-white">
+                        Add new key
+                    </h3>
+
+                    <div class="flex justify-center col-end">
+                        <button type="button"
+                            class="size-8 inline-flex justify-center items-center gap-x-2 rounded-full border border-transparent bg-gray-100 text-gray-800 hover:bg-gray-200 focus:outline-hidden focus:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:hover:bg-neutral-600 dark:text-neutral-400 dark:focus:bg-neutral-600"
+                            aria-label="Close" data-hs-overlay="#hs-vertically-centered-modal">
+                            <span class="sr-only">Close</span>
+                            <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 6 6 18"></path>
+                                <path d="m6 6 12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                </div>
+                <div class="p-4 overflow-y-auto">
+                    <p class="text-gray-800 dark:text-neutral-400">
+                        This is a wider card with supporting text below as a natural lead-in to additional content.
+                    </p>
+                </div>
+                <div class="grid grid-rows-2 place-items-center gap-2 py-3 border-gray-200 dark:border-neutral-700">
+
+                    <button type="submit"
+                        class="w-1/2 justify-center text-center py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-2xs hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                        data-hs-overlay="#hs-vertically-centered-modal">
+                        Add
+                    </button>
+                    <button type="button"
+                        class="w-1/2 justify-center py-2 px-3 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-hidden focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+                        data-hs-overlay="#hs-vertically-centered-modal">
+                        Close
+                    </button>
+            </div>
+        </div>
+    </div>
 
     <div class="modal fade" id="exampleModal">
         <div class="modal-dialog modal-dialog-centered">
@@ -28,14 +76,14 @@
                     <form method="post" class="form-horizontal">
                         {% csrf_token %}
                         {% for f in form %}
-                            {% if f.value is not None %}
-                            <div class="row row-cols-1 row-cols-lg-2 mb-2 align-items-center">
-                                <label class="col-lg-3 control-label text-center mb-1">{{ f.label }}</label>
-                                <div class="col-lg-9 justify-content-center d-flex">
-                                    {{ f }}
-                                </div>
+                        {% if f.value is not None %}
+                        <div class="row row-cols-1 row-cols-lg-2 mb-2 align-items-center">
+                            <label class="col-lg-3 control-label text-center mb-1">{{ f.label }}</label>
+                            <div class="col-lg-9 justify-content-center d-flex">
+                                {{ f }}
                             </div>
-                            {% endif %}
+                        </div>
+                        {% endif %}
                         {% endfor %}
                         <div class="d-grid gap-2 col-lg-8 col-8 mx-auto">
                             <button type="submit" class="btn btn-outline-dark">Add</button>
@@ -81,12 +129,6 @@
         {% endfor %}
     </div>
 </div>
-
-{% block scripts %}
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
-{% endblock %}
 
 <script>
     document.body.addEventListener('htmx:configRequest', (event) => {

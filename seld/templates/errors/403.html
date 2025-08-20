@@ -1,12 +1,12 @@
 {% extends "seld/layout.html" %}
 
 {% block content %}
-<div class="container mt-5">
-    <div class="d-flex align-items-center justify-content-center">
+<div class="mt-12">
+    <div class="flex align-center justify-center mt-auto">
         <div class="text-center">
-            <h1 class="fw-bold">403</h1>
-            <p class="fs-3">В доступе отказано</p>
-            <a href="{% url 'home' %}" class="btn btn-primary my-btn">Вернуться на главную</a>
+            <h1 class="text-5xl font-bold mb-2">403</h1>
+            <p class="text-3xl mb-4">В доступе отказано</p>
+            <a href="{% url 'home' %}" class="h-btn">Вернуться на главную</a>
         </div>
     </div>
 </div>
